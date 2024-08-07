@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#F4FBF4"
     android:backgroundTint="@color/white"
     tools:context=".MainActivity">
 
@@ -15,69 +15,105 @@
         android:layout_marginStart="96dp"
         android:layout_marginEnd="96dp"
         android:layout_marginBottom="24dp"
-        android:backgroundTint="#4CAF50"
+        android:backgroundTint="#b68de0"
         android:text="Roll"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <SeekBar
-        android:id="@+id/seekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
-        android:max="40"
-        android:progress="3"
-        android:progressTint="#8BC34A"
-        app:layout_constraintBottom_toTopOf="@+id/rollButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/archivo_black"
-        android:text="How many?"
-        android:textColor="#4CAF50"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
         android:id="@+id/divider"
         android:layout_width="409dp"
         android:layout_height="1dp"
-        android:layout_marginBottom="16dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77"
         tools:layout_editor_absoluteX="1dp" />
+
+    <EditText
+        android:id="@+id/quantity"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:ems="10"
+        android:fontFamily="@font/archivo_black"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#a1bdfb"
+        app:layout_constraintBottom_toTopOf="@+id/rollButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <EditText
+        android:id="@+id/rangeMin"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:fontFamily="@font/archivo_black"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#a1bdfb"
+        app:layout_constraintBottom_toTopOf="@+id/rollButton"
+        app:layout_constraintEnd_toStartOf="@+id/rangeMax"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@+id/quantity"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <EditText
+        android:id="@+id/rangeMax"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:fontFamily="@font/archivo_black"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#a1bdfb"
+        app:layout_constraintBottom_toTopOf="@+id/rollButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <TextView
+        android:id="@+id/of"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_black"
+        android:text="of"
+        android:textColor="#bcd1fa"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/rollButton"
+        app:layout_constraintEnd_toStartOf="@+id/rangeMax"
+        app:layout_constraintStart_toEndOf="@+id/rangeMin"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <TextView
+        android:id="@+id/numbersFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_black"
+        android:text="numbers from"
+        android:textColor="#bcd1fa"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/rollButton"
+        app:layout_constraintEnd_toStartOf="@+id/rangeMin"
+        app:layout_constraintStart_toEndOf="@+id/quantity"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <TextView
         android:id="@+id/resultsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#8BC34A"
-        android:textSize="144sp"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
+        android:layout_width="326dp"
+        android:layout_height="250dp"
+        android:fontFamily="@font/archivo_black"
+        android:scrollbars="vertical"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#b68de0"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
 
-    <TextView
-        android:id="@+id/seekBarNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/archivo_black"
-        android:textColor="#4CAF50"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar"
-        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
